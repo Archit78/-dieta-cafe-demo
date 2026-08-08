@@ -1,0 +1,1655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dieta Café — Nutrition That Feels Right</title>
+<meta name="description" content="Dieta Café — healthy meals, delivered. Weekly &amp; monthly nutrition plans, à la carte menu, and doorstep delivery in Ankleshwar.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F3EEE3;
+    --cream-deep:#E9E0CC;
+    --paper:#FBF9F4;
+    --ink:#24271C;
+    --ink-70:rgba(36,39,28,0.68);
+    --ink-45:rgba(36,39,28,0.45);
+    --leaf-deep:#1F5E38;
+    --leaf-mid:#4C9A3F;
+    --leaf-light:#9CC94E;
+    --gold:#B4863F;
+    --gold-deep:#8C6529;
+    --gold-pale:#E6D5B0;
+    --line:rgba(36,39,28,0.14);
+    --white:#FFFFFF;
+    --shadow: 0 30px 60px -25px rgba(36,39,28,0.35);
+    --radius-lg: 28px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;text-decoration:none;}
+  ul{list-style:none;margin:0;padding:0;}
+  button{font-family:inherit;cursor:pointer;}
+
+  .serif{font-family:'Fraunces',serif;}
+  .eyebrow{
+    font-family:'Inter',sans-serif;
+    font-size:12px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    font-weight:600;
+    color:var(--gold-deep);
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:26px;height:1px;
+    background:var(--gold-deep);
+    display:inline-block;
+  }
+
+  .wrap{
+    max-width:1240px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+
+  @media (max-width:640px){
+    .wrap{padding:0 20px;}
+  }
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    padding:16px 30px;
+    border-radius:100px;
+    font-size:14px;
+    font-weight:600;
+    letter-spacing:0.02em;
+    border:1px solid transparent;
+    transition:transform .35s cubic-bezier(.2,.8,.2,1), box-shadow .35s ease, background .35s ease, color .35s ease, border-color .35s ease;
+    white-space:nowrap;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn-primary:hover{
+    background:var(--leaf-deep);
+    transform:translateY(-2px);
+    box-shadow:0 16px 30px -12px rgba(31,94,56,0.55);
+  }
+  .btn-ghost{
+    background:transparent;
+    border-color:var(--ink);
+    color:var(--ink);
+  }
+  .btn-ghost:hover{
+    background:var(--ink);
+    color:var(--paper);
+    transform:translateY(-2px);
+  }
+  .btn-gold{
+    background:var(--gold);
+    color:var(--paper);
+  }
+  .btn-gold:hover{
+    background:var(--gold-deep);
+    transform:translateY(-2px);
+    box-shadow:0 16px 30px -12px rgba(140,101,41,0.55);
+  }
+  .btn-sm{padding:11px 22px;font-size:13px;}
+
+  /* ---------- Nav ---------- */
+  header{
+    position:fixed;
+    top:0;left:0;right:0;
+    z-index:1000;
+    padding:18px 0;
+    transition:background .4s ease, padding .4s ease, box-shadow .4s ease;
+  }
+  header.scrolled{
+    background:rgba(243,238,227,0.86);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    padding:12px 0;
+    box-shadow:0 10px 30px -20px rgba(36,39,28,0.4);
+  }
+  .nav-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+  }
+  .logo-link{display:flex;align-items:center;gap:10px;}
+  .logo-link img{height:38px;width:auto;transition:height .3s ease;}
+  header.scrolled .logo-link img{height:32px;}
+
+  nav.primary-nav ul{
+    display:flex;
+    gap:34px;
+    align-items:center;
+  }
+  nav.primary-nav a{
+    font-size:14px;
+    font-weight:500;
+    color:var(--ink-70);
+    position:relative;
+    padding:4px 0;
+  }
+  nav.primary-nav a::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-2px;
+    width:0%;height:1px;
+    background:var(--ink);
+    transition:width .3s ease;
+  }
+  nav.primary-nav a:hover{color:var(--ink);}
+  nav.primary-nav a:hover::after{width:100%;}
+
+  .nav-right{display:flex;align-items:center;gap:18px;}
+  .burger{
+    display:none;
+    width:26px;height:20px;
+    position:relative;
+    background:none;border:none;
+  }
+  .burger span{
+    position:absolute;left:0;right:0;height:2px;background:var(--ink);
+    transition:transform .3s ease, opacity .3s ease, top .3s ease;
+  }
+  .burger span:nth-child(1){top:0;}
+  .burger span:nth-child(2){top:9px;}
+  .burger span:nth-child(3){top:18px;}
+  .burger.open span:nth-child(1){top:9px;transform:rotate(45deg);}
+  .burger.open span:nth-child(2){opacity:0;}
+  .burger.open span:nth-child(3){top:9px;transform:rotate(-45deg);}
+
+  .mobile-panel{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:var(--cream);
+    z-index:999;
+    padding:110px 32px 40px;
+    flex-direction:column;
+    gap:6px;
+    transform:translateY(-12px);
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .mobile-panel.open{
+    opacity:1;transform:translateY(0);pointer-events:auto;
+  }
+  .mobile-panel a{
+    font-family:'Fraunces',serif;
+    font-size:32px;
+    padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .mobile-panel .btn{margin-top:26px;align-self:flex-start;}
+
+  @media (max-width:900px){
+    nav.primary-nav{display:none;}
+    .nav-right .btn{display:none;}
+    .burger{display:block;}
+    .mobile-panel{display:flex;}
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    padding:150px 0 0;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    align-items:center;
+    gap:40px;
+    min-height:calc(100vh - 150px);
+  }
+  .hero-copy{padding-bottom:70px;position:relative;z-index:2;}
+  .hero-copy h1{
+    font-size:clamp(40px,5.4vw,74px);
+    line-height:1.03;
+    font-weight:500;
+    margin:22px 0 24px;
+    letter-spacing:-0.01em;
+  }
+  .hero-copy h1 em{
+    font-style:italic;
+    font-weight:400;
+    color:var(--leaf-deep);
+  }
+  .hero-copy p.lede{
+    font-size:18px;
+    line-height:1.6;
+    color:var(--ink-70);
+    max-width:440px;
+    margin-bottom:36px;
+  }
+  .hero-cta{display:flex;gap:16px;flex-wrap:wrap;}
+
+  .hero-visual{
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    height:100%;
+  }
+  .bowl-frame{
+    position:relative;
+    width:min(560px, 92%);
+    aspect-ratio:1/1;
+    border-radius:50%;
+    overflow:hidden;
+    box-shadow:var(--shadow);
+    border:1px solid rgba(255,255,255,0.4);
+  }
+  .bowl-frame img{width:100%;height:100%;object-fit:cover;}
+  .ring{
+    position:absolute;
+    border-radius:50%;
+    border:1px solid var(--line);
+    pointer-events:none;
+  }
+  .ring-1{inset:-26px;}
+  .ring-2{inset:-52px;border-color:rgba(36,39,28,0.07);}
+
+  .hero-badge{
+    position:absolute;
+    bottom:6%;
+    left:-4%;
+    background:var(--paper);
+    border-radius:50%;
+    width:150px;height:150px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    box-shadow:var(--shadow);
+    animation:spin 22s linear infinite;
+  }
+  .hero-badge .badge-inner{animation:spin-rev 22s linear infinite;display:flex;flex-direction:column;align-items:center;}
+  .hero-badge strong{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    animation:none;
+  }
+  .hero-badge span{
+    font-size:10px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--ink-70);
+    max-width:90px;
+  }
+  @keyframes spin{to{transform:rotate(360deg);}}
+  @keyframes spin-rev{to{transform:rotate(-360deg);}}
+
+  .hero-stats{
+    display:flex;
+    gap:34px;
+    margin-top:46px;
+    padding-top:26px;
+    border-top:1px solid var(--line);
+    max-width:440px;
+  }
+  .hero-stats div strong{
+    font-family:'Fraunces',serif;
+    font-size:26px;
+    display:block;
+  }
+  .hero-stats div span{
+    font-size:12px;
+    color:var(--ink-70);
+    letter-spacing:0.03em;
+  }
+
+  .marquee-strip{
+    background:var(--ink);
+    color:var(--cream);
+    padding:16px 0;
+    overflow:hidden;
+    white-space:nowrap;
+    margin-top:64px;
+  }
+  .marquee-track{
+    display:inline-flex;
+    gap:60px;
+    animation:marquee 26s linear infinite;
+  }
+  .marquee-track span{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:16px;
+    display:inline-flex;
+    align-items:center;
+    gap:60px;
+    color:var(--gold-pale);
+  }
+  .marquee-track span::after{content:"✦";color:var(--leaf-light);margin-left:60px;font-style:normal;}
+  @keyframes marquee{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  @media (max-width:900px){
+    .hero{padding-top:120px;}
+    .hero-grid{grid-template-columns:1fr;min-height:auto;}
+    .hero-copy{padding-bottom:20px;order:2;}
+    .hero-visual{order:1;margin-bottom:20px;}
+    .bowl-frame{width:min(420px,80%);}
+    .hero-badge{width:120px;height:120px;left:2%;bottom:0;}
+    .hero-badge strong{font-size:20px;}
+    .hero-stats{gap:22px;flex-wrap:wrap;}
+  }
+
+  /* ---------- Section generic ---------- */
+  section{padding:120px 0;position:relative;}
+  @media (max-width:900px){section{padding:80px 0;}}
+  .section-head{
+    max-width:640px;
+    margin-bottom:56px;
+  }
+  .section-head h2{
+    font-size:clamp(30px,4vw,48px);
+    font-weight:500;
+    margin:18px 0 0;
+    line-height:1.1;
+  }
+  .section-head p{
+    font-size:16px;
+    color:var(--ink-70);
+    margin-top:18px;
+    line-height:1.7;
+  }
+  .section-head.center{margin-left:auto;margin-right:auto;text-align:center;}
+
+  .alt-bg{background:var(--cream-deep);}
+  .dark-bg{background:var(--ink);color:var(--cream);}
+  .dark-bg .eyebrow{color:var(--leaf-light);}
+  .dark-bg .eyebrow::before{background:var(--leaf-light);}
+
+  /* reveal on scroll */
+  .reveal{
+    opacity:0;
+    transform:translateY(28px);
+    transition:opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+  }
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- Intro ---------- */
+  .intro-layout{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:70px;
+    align-items:start;
+  }
+  .intro-layout .big-quote{
+    font-family:'Fraunces',serif;
+    font-size:clamp(24px,2.6vw,32px);
+    line-height:1.35;
+    font-weight:400;
+  }
+  .intro-layout .big-quote em{color:var(--leaf-deep);font-style:italic;}
+  .intro-support p{
+    color:var(--ink-70);
+    font-size:16px;
+    line-height:1.8;
+    margin-bottom:18px;
+  }
+  @media (max-width:900px){
+    .intro-layout{grid-template-columns:1fr;gap:30px;}
+  }
+
+  /* ---------- Why Dieta ---------- */
+  .why-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:2px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+  }
+  .why-card{
+    background:var(--paper);
+    padding:44px 34px;
+    transition:background .4s ease;
+  }
+  .why-card:hover{background:var(--white);}
+  .why-num{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:14px;
+    color:var(--gold-deep);
+    margin-bottom:20px;
+    display:block;
+  }
+  .why-icon{
+    width:52px;height:52px;
+    border-radius:50%;
+    background:var(--leaf-deep);
+    color:var(--cream);
+    display:flex;align-items:center;justify-content:center;
+    margin-bottom:22px;
+  }
+  .why-card h3{
+    font-family:'Fraunces',serif;
+    font-size:21px;
+    font-weight:500;
+    margin:0 0 12px;
+  }
+  .why-card p{
+    font-size:14.5px;
+    color:var(--ink-70);
+    line-height:1.7;
+    margin:0;
+  }
+  @media (max-width:900px){
+    .why-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- Meal plans ---------- */
+  .plans-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:32px;
+  }
+  .plan-card{
+    background:var(--paper);
+    border-radius:var(--radius-lg);
+    padding:44px;
+    border:1px solid var(--line);
+    position:relative;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+  }
+  .plan-card.featured{
+    background:var(--ink);
+    color:var(--cream);
+    box-shadow:var(--shadow);
+  }
+  .plan-card.featured .plan-price-unit,
+  .plan-card.featured .day-row span{color:rgba(243,238,227,0.65);}
+  .plan-card.featured .plan-tag{background:var(--leaf-mid);color:var(--ink);}
+  .plan-tag{
+    display:inline-flex;
+    align-self:flex-start;
+    background:var(--gold-pale);
+    color:var(--gold-deep);
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    padding:7px 14px;
+    border-radius:100px;
+    margin-bottom:22px;
+  }
+  .plan-card h3{
+    font-family:'Fraunces',serif;
+    font-size:30px;
+    font-weight:500;
+    margin:0 0 4px;
+  }
+  .plan-card .plan-sub{
+    font-size:13px;
+    color:var(--ink-45);
+    margin-bottom:26px;
+  }
+  .plan-card.featured .plan-sub{color:rgba(243,238,227,0.55);}
+  .plan-price{
+    display:flex;
+    align-items:baseline;
+    gap:8px;
+    margin-bottom:2px;
+  }
+  .plan-price .amt{
+    font-family:'Fraunces',serif;
+    font-size:46px;
+  }
+  .plan-price-unit{font-size:13px;color:var(--ink-45);}
+  .plan-price-alt{
+    font-size:13.5px;
+    color:var(--ink-70);
+    margin:6px 0 26px;
+    padding-bottom:26px;
+    border-bottom:1px dashed var(--line);
+  }
+  .plan-card.featured .plan-price-alt{color:rgba(243,238,227,0.75);border-color:rgba(243,238,227,0.2);}
+
+  .day-row{
+    display:flex;
+    justify-content:space-between;
+    gap:14px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-size:13.5px;
+  }
+  .plan-card.featured .day-row{border-color:rgba(243,238,227,0.14);}
+  .day-row:last-of-type{border-bottom:none;}
+  .day-row strong{font-weight:600;min-width:78px;}
+  .day-row span{color:var(--ink-70);line-height:1.5;}
+
+  .plan-choice{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+    gap:14px;
+    padding:30px 10px;
+    background:rgba(36,39,28,0.03);
+    border-radius:18px;
+    margin:6px 0 20px;
+  }
+  .plan-card.featured .plan-choice{background:rgba(243,238,227,0.06);}
+  .plan-choice img{width:88px;height:88px;border-radius:50%;object-fit:cover;}
+  .plan-choice p{margin:0;font-size:14.5px;line-height:1.5;}
+  .plan-choice p em{font-style:italic;color:var(--leaf-mid);}
+
+  .plan-notes{
+    font-size:12px;
+    color:var(--ink-45);
+    line-height:1.8;
+    margin:18px 0 28px;
+    flex-grow:1;
+  }
+  .plan-card.featured .plan-notes{color:rgba(243,238,227,0.5);}
+  .plan-notes li{position:relative;padding-left:14px;}
+  .plan-notes li::before{content:"–";position:absolute;left:0;}
+
+  @media (max-width:900px){
+    .plans-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- How it works ---------- */
+  .flow{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:0;
+    position:relative;
+  }
+  .flow::before{
+    content:"";
+    position:absolute;
+    top:34px;left:60px;right:60px;
+    height:1px;
+    background:repeating-linear-gradient(to right, var(--line) 0 8px, transparent 8px 16px);
+  }
+  .flow-step{
+    padding:0 20px;
+    text-align:center;
+    position:relative;
+  }
+  .flow-num{
+    width:68px;height:68px;
+    border-radius:50%;
+    background:var(--paper);
+    border:1px solid var(--line);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    margin:0 auto 24px;
+    position:relative;
+    z-index:2;
+    transition:background .35s ease, color .35s ease, transform .35s ease;
+  }
+  .flow-step:hover .flow-num{background:var(--leaf-deep);color:var(--cream);transform:scale(1.08);}
+  .flow-step h4{
+    font-family:'Fraunces',serif;
+    font-size:19px;
+    font-weight:500;
+    margin:0 0 10px;
+  }
+  .flow-step p{
+    font-size:13.5px;
+    color:var(--ink-70);
+    line-height:1.6;
+    margin:0;
+  }
+  @media (max-width:900px){
+    .flow{grid-template-columns:1fr;gap:38px;}
+    .flow::before{display:none;}
+  }
+
+  /* ---------- Menu ---------- */
+  .menu-tabs{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-bottom:44px;
+    border-bottom:1px solid var(--line);
+    padding-bottom:24px;
+  }
+  .menu-tab{
+    padding:10px 20px;
+    border-radius:100px;
+    border:1px solid var(--line);
+    background:transparent;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--ink-70);
+    transition:all .3s ease;
+  }
+  .menu-tab.active{
+    background:var(--ink);
+    border-color:var(--ink);
+    color:var(--cream);
+  }
+  .menu-tab:hover:not(.active){border-color:var(--ink);color:var(--ink);}
+
+  .menu-panel{display:none;}
+  .menu-panel.active{display:block;}
+
+  .menu-cat-head{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    margin:0 0 20px;
+  }
+  .menu-cat-head img{width:56px;height:56px;border-radius:50%;object-fit:cover;flex-shrink:0;}
+  .menu-cat-head h4{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    font-weight:500;
+    margin:0;
+  }
+  .menu-cat-head span{
+    font-size:12.5px;
+    color:var(--ink-45);
+  }
+
+  .menu-list{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:0 44px;
+    margin-bottom:38px;
+  }
+  .menu-item{
+    display:flex;
+    justify-content:space-between;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .menu-item .mi-name{font-weight:600;font-size:15px;}
+  .menu-item .mi-desc{font-size:12.5px;color:var(--ink-45);margin-top:4px;line-height:1.5;}
+  .menu-item .mi-price{
+    font-family:'Fraunces',serif;
+    font-size:17px;
+    white-space:nowrap;
+    padding-top:1px;
+  }
+  @media (max-width:760px){
+    .menu-list{grid-template-columns:1fr;}
+  }
+
+  .addon-block{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:18px;
+    padding:26px 30px;
+    margin-top:10px;
+  }
+  .addon-block h5{
+    font-size:11px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:var(--gold-deep);
+    margin:0 0 16px;
+    font-weight:700;
+  }
+  .addon-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:13.5px;
+    padding:8px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .addon-row:last-child{border-bottom:none;}
+  .addon-row span:last-child{color:var(--ink-70);}
+  .addon-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 30px;}
+  @media (max-width:760px){.addon-grid{grid-template-columns:1fr;}}
+
+  .base-note{
+    display:inline-block;
+    background:var(--gold-pale);
+    color:var(--gold-deep);
+    font-size:12px;
+    font-weight:600;
+    padding:8px 16px;
+    border-radius:100px;
+    margin-bottom:24px;
+  }
+
+  /* ---------- Gallery ---------- */
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:110px;
+    gap:14px;
+  }
+  .gallery-grid figure{
+    margin:0;
+    overflow:hidden;
+    border-radius:22px;
+    position:relative;
+    grid-column:span 2;
+    grid-row:span 2;
+  }
+  .gallery-grid figure.tall{grid-row:span 3;}
+  .gallery-grid figure.wide{grid-column:span 3;}
+  .gallery-grid img{
+    width:100%;height:100%;object-fit:cover;
+    transition:transform .6s cubic-bezier(.2,.7,.2,1);
+  }
+  .gallery-grid figure:hover img{transform:scale(1.08);}
+  .gallery-grid figcaption{
+    position:absolute;
+    left:16px;bottom:14px;
+    color:#fff;
+    font-size:12.5px;
+    font-weight:600;
+    opacity:0;
+    transform:translateY(6px);
+    transition:opacity .35s ease, transform .35s ease;
+  }
+  .gallery-grid figure::after{
+    content:"";
+    position:absolute;inset:0;
+    background:linear-gradient(to top, rgba(0,0,0,0.55), transparent 55%);
+    opacity:0;
+    transition:opacity .35s ease;
+  }
+  .gallery-grid figure:hover::after,
+  .gallery-grid figure:hover figcaption{opacity:1;transform:translateY(0);}
+
+  @media (max-width:900px){
+    .gallery-grid{grid-template-columns:repeat(4,1fr);grid-auto-rows:90px;}
+    .gallery-grid figure.wide{grid-column:span 4;}
+  }
+  @media (max-width:560px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px;}
+    .gallery-grid figure,.gallery-grid figure.wide{grid-column:span 2;grid-row:span 2;}
+  }
+
+  /* ---------- About / Delivery ---------- */
+  .about-layout{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+  }
+  .about-photo{
+    position:relative;
+    border-radius:50%;
+    overflow:hidden;
+    aspect-ratio:1/1;
+    box-shadow:var(--shadow);
+  }
+  .about-photo img{width:100%;height:100%;object-fit:cover;}
+  .about-copy p{
+    font-size:16.5px;
+    line-height:1.85;
+    color:var(--ink-70);
+    margin-bottom:20px;
+  }
+  .pillars{
+    display:flex;
+    gap:30px;
+    margin-top:36px;
+    flex-wrap:wrap;
+  }
+  .pillar{display:flex;align-items:center;gap:12px;}
+  .pillar .dot{width:10px;height:10px;border-radius:50%;background:var(--leaf-mid);flex-shrink:0;}
+  .pillar span{font-size:13.5px;font-weight:600;}
+
+  @media (max-width:900px){
+    .about-layout{grid-template-columns:1fr;gap:40px;}
+    .about-photo{max-width:320px;margin:0 auto;}
+  }
+
+  .delivery-strip{
+    display:grid;
+    grid-template-columns:1.2fr 1fr 1fr;
+    gap:40px;
+    align-items:center;
+    border-top:1px solid rgba(243,238,227,0.16);
+    padding-top:56px;
+    margin-top:56px;
+  }
+  .delivery-strip h3{
+    font-family:'Fraunces',serif;
+    font-size:28px;
+    font-weight:500;
+    margin:0 0 14px;
+  }
+  .delivery-strip p{
+    font-size:15px;
+    line-height:1.7;
+    color:rgba(243,238,227,0.72);
+    margin:0;
+  }
+  .delivery-fact{
+    border-left:1px solid rgba(243,238,227,0.2);
+    padding-left:26px;
+  }
+  .delivery-fact strong{
+    font-family:'Fraunces',serif;
+    font-size:22px;
+    display:block;
+    margin-bottom:6px;
+    color:var(--leaf-light);
+  }
+  .delivery-fact span{font-size:13px;color:rgba(243,238,227,0.6);}
+  @media (max-width:900px){
+    .delivery-strip{grid-template-columns:1fr;gap:26px;}
+    .delivery-fact{border-left:none;padding-left:0;border-top:1px solid rgba(243,238,227,0.2);padding-top:16px;}
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{
+    text-align:center;
+    padding:130px 0;
+    position:relative;
+  }
+  .final-cta h2{
+    font-size:clamp(34px,6vw,64px);
+    font-weight:500;
+    margin:16px 0 30px;
+    max-width:760px;
+    margin-left:auto;
+    margin-right:auto;
+    line-height:1.08;
+  }
+  .final-cta h2 em{font-style:italic;color:var(--leaf-deep);}
+  .final-cta .hero-cta{justify-content:center;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink);
+    color:var(--cream);
+    padding:80px 0 30px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:1.4fr 1fr 1fr 1.1fr;
+    gap:40px;
+    padding-bottom:60px;
+    border-bottom:1px solid rgba(243,238,227,0.14);
+  }
+  .footer-logo{height:36px;margin-bottom:18px;filter:brightness(0) invert(1);}
+  .footer-tag{
+    font-family:'Fraunces',serif;
+    font-style:italic;
+    font-size:16px;
+    color:rgba(243,238,227,0.65);
+    max-width:260px;
+    line-height:1.5;
+  }
+  footer h5{
+    font-size:11.5px;
+    letter-spacing:0.12em;
+    text-transform:uppercase;
+    color:rgba(243,238,227,0.5);
+    margin:0 0 20px;
+  }
+  footer .flinks li{margin-bottom:12px;}
+  footer .flinks a{
+    font-size:14.5px;
+    color:rgba(243,238,227,0.85);
+    transition:color .3s ease, padding-left .3s ease;
+  }
+  footer .flinks a:hover{color:var(--leaf-light);padding-left:4px;}
+  .footer-contact li{
+    font-size:14.5px;
+    color:rgba(243,238,227,0.85);
+    margin-bottom:14px;
+    line-height:1.6;
+  }
+  .footer-bottom{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding-top:26px;
+    font-size:12.5px;
+    color:rgba(243,238,227,0.45);
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  @media (max-width:900px){
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:560px){
+    .footer-grid{grid-template-columns:1fr;}
+  }
+
+  /* misc */
+  .divider-note{
+    text-align:center;
+    font-size:12.5px;
+    color:var(--ink-45);
+    margin-top:20px;
+  }
+  ::selection{background:var(--leaf-mid);color:#fff;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:0.01ms !important; animation-iteration-count:1 !important; transition-duration:0.01ms !important; scroll-behavior:auto !important;}
+  }
+
+  a:focus-visible, button:focus-visible{
+    outline:2px solid var(--leaf-deep);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<header id="siteHeader">
+  <div class="wrap nav-inner">
+    <a href="#home" class="logo-link">
+      <img src="images/dieta-logo.png" alt="Dieta Café">
+    </a>
+    <nav class="primary-nav">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#plans">Meal Plans</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-right">
+      <a href="#plans" class="btn btn-primary btn-sm">Subscribe Now</a>
+      <button class="burger" id="burgerBtn" aria-label="Open menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="#home">Home</a>
+  <a href="#plans">Meal Plans</a>
+  <a href="#menu">Menu</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+  <a href="#plans" class="btn btn-primary">Subscribe Now</a>
+</div>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="home">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy reveal in">
+        <span class="eyebrow">Healthy meals, delivered</span>
+        <h1 class="serif">Nutrition that<br><em>feels right.</em></h1>
+        <p class="lede">Dieta Café is a cloud kitchen making clean eating simple — weekly and monthly meal plans, plus an à‑la‑carte menu, with the calories and macros of every dish laid out plainly. Your goals, our nutrition.</p>
+        <div class="hero-cta">
+          <a href="#plans" class="btn btn-primary">Explore Meal Plans</a>
+          <a href="#menu" class="btn btn-ghost">View Menu</a>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <strong>26</strong>
+            <span>Meals per monthly plan</span>
+          </div>
+          <div>
+            <strong>8</strong>
+            <span>Menu categories to choose from</span>
+          </div>
+          <div>
+            <strong>100%</strong>
+            <span>Dishes with calories &amp; macros listed</span>
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual reveal in">
+        <div class="ring ring-2"></div>
+        <div class="ring ring-1"></div>
+        <div class="bowl-frame">
+          <img src="images/hero-main.jpg" alt="Signature rice and paneer bowl from Dieta Café, shot from above">
+        </div>
+        <div class="hero-badge">
+          <div class="badge-inner">
+            <strong class="serif">₹223</strong>
+            <span>per day, plans from</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="marquee-strip">
+    <div class="marquee-track">
+      <span>Fresh Ingredients</span>
+      <span>Nutrition That Feels Right</span>
+      <span>Fuel Your Best</span>
+      <span>Eat Clean · Stay Lean · Live Better</span>
+      <span>Fresh Ingredients</span>
+      <span>Nutrition That Feels Right</span>
+      <span>Fuel Your Best</span>
+      <span>Eat Clean · Stay Lean · Live Better</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTRO ============ -->
+<section id="intro">
+  <div class="wrap">
+    <div class="intro-layout">
+      <div class="intro-support reveal">
+        <span class="eyebrow">What Dieta Café is</span>
+      </div>
+      <div class="reveal">
+        <p class="big-quote serif">A cloud‑kitchen for people who want food that tastes good <em>and</em> keeps score — every rice bowl, salad, sandwich, and shake comes with its calories, protein, fat and carbs printed right next to the price.</p>
+        <div class="intro-support" style="margin-top:32px;">
+          <p>Order from the full menu whenever you like, or subscribe to a weekly or monthly plan and let a rotation of rice bowls, salads, sandwiches and more arrive at your door — delivery included. Based in Ankleshwar, Dieta Café keeps the format simple: fresh ingredients, honest nutrition numbers, and packages built around how you actually eat through the week.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY DIETA ============ -->
+<section class="alt-bg" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Why Dieta</span>
+      <h2 class="serif">Clean eating, without the guesswork.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-card">
+        <span class="why-num serif">01</span>
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13a8 8 0 1 1 16 0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M12 13V7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><path d="M3 20h18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="serif">Full nutrition, every dish</h3>
+        <p>Calories, protein, fat and carbs are listed on every rice bowl, salad, sandwich, shake and oats bowl on the menu — so you always know what's on your plate.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-num serif">02</span>
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3c3 3 5 6 5 9a5 5 0 0 1-10 0c0-3 2-6 5-9Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+        </div>
+        <h3 class="serif">Fresh ingredients</h3>
+        <p>Bowls are built to order from fresh produce, lean proteins and house-made dressings — the same promise on every package, every day.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-num serif">03</span>
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 3v18M6 3c4 0 4 3 8 3s4-3 4-3v9c0 0 0 3-4 3s-4-3-8-3" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="serif">Plans that flex with you</h3>
+        <p>Choose a weekly or monthly package, or order freely off the menu. Protein add-ons, dips and extras let you shape every meal.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-num serif">04</span>
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><rect x="4" y="9" width="16" height="9" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M8 9V6a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.6"/></svg>
+        </div>
+        <h3 class="serif">No shortcuts in the shakes</h3>
+        <p>Protein add-ons are a straight 20 grams per scoop, with no thickeners used — one small detail that says a lot about the rest of the kitchen.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-num serif">05</span>
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 12h13M11 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 5v14" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="serif">Delivered to you</h3>
+        <p>Every monthly and weekly package includes delivery, priced in from the start — ₹239/day or ₹223/day depending on plan, delivery included.</p>
+      </div>
+      <div class="why-card">
+        <span class="why-num serif">06</span>
+        <div class="why-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8.5" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        </div>
+        <h3 class="serif">Built around your week</h3>
+        <p>Package 1 maps a full Monday–Saturday rotation of rice, salad, and sandwich days, so healthy eating stops being a daily decision.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MEAL PLANS ============ -->
+<section id="plans">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Meal Plans</span>
+      <h2 class="serif">Two ways to subscribe.</h2>
+      <p>Both packages include delivery and run for 26 meals within a maximum of 32 days (excluding Sundays). Pay monthly or week to week.</p>
+    </div>
+
+    <div class="plans-grid reveal">
+
+      <!-- Package 1 -->
+      <div class="plan-card">
+        <span class="plan-tag">Package 1 · Full Rotation</span>
+        <h3 class="serif">Package 1</h3>
+        <div class="plan-sub">26 meals · delivery included</div>
+
+        <div class="plan-price">
+          <span class="amt serif">₹6,200</span>
+          <span class="plan-price-unit">/ 26 days (1 month)</span>
+        </div>
+        <div class="plan-price-alt">₹239/day (incl. delivery) &nbsp;·&nbsp; or <strong style="color:var(--ink)">₹1,800</strong> for 6 days (1 week)</div>
+
+        <div>
+          <div class="day-row"><strong>Monday</strong><span>Any rice item (meals)</span></div>
+          <div class="day-row"><strong>Tuesday</strong><span>Any salad with protein</span></div>
+          <div class="day-row"><strong>Wednesday</strong><span>Any smoothie, oats or brownie + any sandwich or avocado sandwich (paneer, egg or chicken avocado)</span></div>
+          <div class="day-row"><strong>Thursday</strong><span>Any rice item (meals)</span></div>
+          <div class="day-row"><strong>Friday</strong><span>Any salad with protein</span></div>
+          <div class="day-row"><strong>Saturday</strong><span>Any smoothie, oats or brownie + any sandwich or avocado sandwich (paneer, egg or chicken avocado)</span></div>
+        </div>
+
+        <ul class="plan-notes">
+          <li>No add-ons with the avocado sandwich</li>
+          <li>No refund once paid; complete within the last date provided</li>
+          <li>No extra days provided after the last date</li>
+          <li>26 meals provided; maximum time to complete is 32 days (excluding Sunday)</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-primary" style="align-self:flex-start;margin-top:auto;">Choose Package 1</a>
+      </div>
+
+      <!-- Package 2 -->
+      <div class="plan-card featured">
+        <span class="plan-tag">Package 2 · Choose Freely</span>
+        <h3 class="serif">Package 2</h3>
+        <div class="plan-sub">26 meals · delivery included</div>
+
+        <div class="plan-price">
+          <span class="amt serif">₹5,800</span>
+          <span class="plan-price-unit">/ 26 days (1 month)</span>
+        </div>
+        <div class="plan-price-alt">₹223/day (incl. delivery) &nbsp;·&nbsp; or <strong style="color:var(--cream)">₹1,650</strong> for 6 days (1 week)</div>
+
+        <div class="plan-choice">
+          <img src="images/salad-protein-2-sq.jpg" alt="Fresh salad with protein">
+          <p>Any salad of your choice <em>or</em> any meal of your choice, every day.</p>
+        </div>
+
+        <ul class="plan-notes">
+          <li>This package doesn't include any smoothie, shakes or sandwiches</li>
+          <li>No refund once paid; complete within the last date provided</li>
+          <li>No extra days provided after the last date</li>
+          <li>26 meals provided; maximum time to complete is 32 days (excluding Sunday)</li>
+        </ul>
+
+        <a href="#contact" class="btn btn-gold" style="align-self:flex-start;margin-top:auto;">Choose Package 2</a>
+      </div>
+
+    </div>
+    <p class="divider-note">Prices and package terms shown are as provided by Dieta Café · subject to confirmation at signup.</p>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="alt-bg" id="how">
+  <div class="wrap">
+    <div class="section-head center reveal" style="margin-left:auto;margin-right:auto;">
+      <span class="eyebrow">How it works</span>
+      <h2 class="serif">From plan to plate.</h2>
+    </div>
+    <div class="flow reveal">
+      <div class="flow-step">
+        <div class="flow-num serif">1</div>
+        <h4 class="serif">Choose a plan</h4>
+        <p>Pick Package 1 or Package 2, weekly or monthly.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num serif">2</div>
+        <h4 class="serif">Enter your details</h4>
+        <p>Share your delivery address and contact information.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num serif">3</div>
+        <h4 class="serif">Confirm your subscription</h4>
+        <p>Review your plan and confirm to lock in your dates.</p>
+      </div>
+      <div class="flow-step">
+        <div class="flow-num serif">4</div>
+        <h4 class="serif">Get your meals delivered</h4>
+        <p>Your rotation arrives at your door, plan day by plan day.</p>
+      </div>
+    </div>
+    <p class="divider-note">This is a visual walkthrough for the demo — payments, accounts and live ordering will be connected in the full build.</p>
+  </div>
+</section>
+
+<!-- ============ MENU ============ -->
+<section id="menu">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">The Menu</span>
+      <h2 class="serif">Order it your way.</h2>
+      <p>Eight categories, each dish listed with its calories, protein, fat and carbs. Add-ons and dips let you build the bowl you want.</p>
+    </div>
+
+    <div class="menu-tabs reveal" id="menuTabs">
+      <button class="menu-tab active" data-tab="rice">Rice</button>
+      <button class="menu-tab" data-tab="salads">Salads</button>
+      <button class="menu-tab" data-tab="sandwiches">Sandwiches</button>
+      <button class="menu-tab" data-tab="pizza">Pizza</button>
+      <button class="menu-tab" data-tab="burger">Burger</button>
+      <button class="menu-tab" data-tab="shakes">Shakes</button>
+      <button class="menu-tab" data-tab="oats">Oats</button>
+      <button class="menu-tab" data-tab="desserts">Desserts</button>
+    </div>
+
+    <!-- RICE -->
+    <div class="menu-panel active" id="panel-rice">
+      <div class="menu-cat-head">
+        <img src="images/bowl-rice-egg-1.jpg" alt="Rice bowl">
+        <div><h4 class="serif">Rice — Pure Veg</h4><span>9 bowls</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Hummus Paneer Rice</div><div class="mi-desc">548 cal · 21.7g protein · 25.9g fat · 66g carbs</div></div><div class="mi-price serif">₹300</div></div>
+        <div class="menu-item"><div><div class="mi-name">Lemon Coriander Rice</div><div class="mi-desc">565 cal · 21.6g protein · 27.5g fat · 58g carbs</div></div><div class="mi-price serif">₹290</div></div>
+        <div class="menu-item"><div><div class="mi-name">Kadhai Paneer Rice</div><div class="mi-desc">515 cal · 19.5g protein · 23.5g fat · 56g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Paneer Fried Rice</div><div class="mi-desc">497 cal · 18.2g protein · 21.5g fat · 54.5g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Makhni Paneer Rice</div><div class="mi-desc">565 cal · 20.5g protein · 27.5g fat · 58g carbs</div></div><div class="mi-price serif">₹290</div></div>
+        <div class="menu-item"><div><div class="mi-name">Paneer Mushroom Rice</div><div class="mi-desc">465 cal · 17.8g protein · 22g fat · 59g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Paneer Rice</div><div class="mi-desc">495 cal · 19.5g protein · 21.5g fat · 54g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Mushroom Lemon Coriander</div><div class="mi-desc">478 cal · 25.8g protein · 7.4g fat · 57g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Vegetable Rice</div><div class="mi-desc">312 cal · 7.1g protein · 5.5g fat · 60g carbs</div></div><div class="mi-price serif">₹290</div></div>
+      </div>
+
+      <div class="menu-cat-head">
+        <img src="images/bowl-rice-egg-2.jpg" alt="Egg rice bowl">
+        <div><h4 class="serif">Rice — Egg Station</h4><span>6 bowls</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Hummus Egg Rice</div><div class="mi-desc">573 cal · 27.7g protein · 26.9g fat · 56.5g carbs</div></div><div class="mi-price serif">₹290</div></div>
+        <div class="menu-item"><div><div class="mi-name">Egg Rice</div><div class="mi-desc">495 cal · 23.5g protein · 20.5g fat · 52.5g carbs</div></div><div class="mi-price serif">₹240</div></div>
+        <div class="menu-item"><div><div class="mi-name">Kadhai Egg Rice</div><div class="mi-desc">515 cal · 23.5g protein · 22.5g fat · 54.5g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Lemon Coriander Egg Rice</div><div class="mi-desc">406 cal · 18.5g protein · 11.5g fat · 56g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Makhni Egg Rice</div><div class="mi-desc">565 cal · 24.5g protein · 26.5g fat · 56.5g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Egg Mushroom Rice</div><div class="mi-desc">361 cal · 18.3g protein · 5.9g fat · 58g carbs</div></div><div class="mi-price serif">₹250</div></div>
+      </div>
+
+      <div class="menu-cat-head">
+        <img src="images/bowl-makhni-1.jpg" alt="Chicken rice bowl">
+        <div><h4 class="serif">Rice — Non Veg</h4><span>8 bowls</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Hummus Chicken Rice</div><div class="mi-desc">478 cal · 31.7g protein · 13.9g fat · 55g carbs</div></div><div class="mi-price serif">₹300</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Egg Rice</div><div class="mi-desc">507 cal · 33g protein · 15.5g fat · 52g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Kadhai Chicken Rice</div><div class="mi-desc">435 cal · 30.5g protein · 9.5g fat · 53g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Fried Rice</div><div class="mi-desc">447 cal · 30.2g protein · 7.5g fat · 51.5g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Makhni Chicken Rice</div><div class="mi-desc">485 cal · 31.5g protein · 13.5g fat · 55g carbs</div></div><div class="mi-price serif">₹270</div></div>
+        <div class="menu-item"><div><div class="mi-name">Lemon Coriander Chicken</div><div class="mi-desc">485 cal · 32.5g protein · 13.5g fat · 55g carbs</div></div><div class="mi-price serif">₹270</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Rice</div><div class="mi-desc">445 cal · 30.5g protein · 7.5g fat · 51g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Mushroom Rice</div><div class="mi-desc">408 cal · 25.8g protein · 7.4g fat · 57g carbs</div></div><div class="mi-price serif">₹250</div></div>
+      </div>
+
+      <div class="addon-block">
+        <h5>Add-ons for Rice</h5>
+        <div class="addon-grid">
+          <div><div class="addon-row"><span>Paneer — 80g</span><span>₹130</span></div><div class="addon-row"><span>Paneer — 50g</span><span>₹100</span></div></div>
+          <div><div class="addon-row"><span>Chicken — 80g</span><span>₹130</span></div><div class="addon-row"><span>Chicken — 50g</span><span>₹100</span></div></div>
+        </div>
+        <div class="addon-row" style="margin-top:8px;"><span>Egg — 2 nos / 3 nos</span><span>₹55 / ₹65</span></div>
+      </div>
+    </div>
+
+    <!-- SALADS -->
+    <div class="menu-panel" id="panel-salads">
+      <div class="menu-cat-head">
+        <img src="images/salad-crouton-1.jpg" alt="Salad bowl">
+        <div><h4 class="serif">Salads</h4><span>12 bowls</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Dieta Special</div><div class="mi-desc">Red &amp; yellow bellpepper, capsicum, cucumber, corn, pineapple, carrot, cabbage, olives, red paprika, low-fat dressing</div></div><div class="mi-price serif">₹200</div></div>
+        <div class="menu-item"><div><div class="mi-name">Italian Pasta</div><div class="mi-desc">Whole wheat pasta, cucumber, cherry tomato, olives, cheese, onion, carrot</div></div><div class="mi-price serif">₹280</div></div>
+        <div class="menu-item"><div><div class="mi-name">Dieta 2.0</div><div class="mi-desc">Lettuce, red &amp; yellow bell pepper, capsicum, corn, cucumber, pineapple, carrot, olives, jalapenos, low-fat dressing</div></div><div class="mi-price serif">₹220</div></div>
+        <div class="menu-item"><div><div class="mi-name">High Protein Salad</div><div class="mi-desc">Lettuce, cucumber, tomato, bellpepper, onion, boiled egg, chicken, kidney bean</div></div><div class="mi-price serif">₹340</div></div>
+        <div class="menu-item"><div><div class="mi-name">Burrito Bowl</div><div class="mi-desc">Kidney beans, tomato, onion &amp; jalapenos, red &amp; yellow bellpepper, corn, lettuce, nachos, rice, spicy curd dressing</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Mushroom Teriyaki</div><div class="mi-desc">Sautéed mushroom, lettuce, carrot, red cabbage, cucumber, red bellpepper, spring onion, sesame seed, low-fat dressing</div></div><div class="mi-price serif">₹240</div></div>
+        <div class="menu-item"><div><div class="mi-name">Apple Crunchy Bowl</div><div class="mi-desc">Apple, lettuce, cabbage, cucumber, red cabbage, corn, onion, carrot, walnuts, peanuts, apple cider vinaigrette</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Hummus Salad</div><div class="mi-desc">Lettuce, cucumber, onion, beetroot, tomato, hummus</div></div><div class="mi-price serif">₹260</div></div>
+        <div class="menu-item"><div><div class="mi-name">Crunchy Pepper Corn</div><div class="mi-desc">Apple, lettuce, cabbage, cucumber, red cabbage, corn, onion, carrot, walnuts, peanuts, apple cider vinaigrette</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Broccoli Crunch</div><div class="mi-desc">Broccoli, lettuce, cherry tomato, red &amp; yellow bell peppers, cucumber, onion</div></div><div class="mi-price serif">₹270</div></div>
+        <div class="menu-item"><div><div class="mi-name">Keto Salad</div><div class="mi-desc">Lettuce, cucumber, cherry tomato, bell peppers, avocado, seeds, lemon vinaigrette</div></div><div class="mi-price serif">₹280</div></div>
+        <div class="menu-item"><div><div class="mi-name">Garden Green</div><div class="mi-desc">Broccoli, lettuce, beans, capsicum, cabbage, cucumber, spring onion, coriander</div></div><div class="mi-price serif">₹290</div></div>
+      </div>
+
+      <div class="addon-block" style="margin-bottom:20px;">
+        <h5>Add-ons for Salads</h5>
+        <div class="addon-grid">
+          <div>
+            <div class="addon-row"><span>Mushroom</span><span>₹80</span></div>
+            <div class="addon-row"><span>Broccoli</span><span>₹80</span></div>
+            <div class="addon-row"><span>Blueberry</span><span>₹130</span></div>
+            <div class="addon-row"><span>Avocado</span><span>₹130</span></div>
+            <div class="addon-row"><span>Lettuce</span><span>₹55</span></div>
+          </div>
+          <div>
+            <div class="addon-row"><span>Paneer — 80g / 50g</span><span>₹130 / ₹100</span></div>
+            <div class="addon-row"><span>Chicken — 80g / 50g</span><span>₹130 / ₹100</span></div>
+            <div class="addon-row"><span>Boiled egg — 2 / 3 nos</span><span>₹55 / ₹65</span></div>
+            <div class="addon-row"><span>Tofu — 40g / 80g</span><span>₹90 / ₹120</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="addon-block">
+        <h5>Dips</h5>
+        <div class="addon-grid">
+          <div>
+            <div class="addon-row"><span>Peri Peri</span><span>₹20</span></div>
+            <div class="addon-row"><span>Cheese Jalapenos</span><span>₹20</span></div>
+            <div class="addon-row"><span>Chitpotle</span><span>₹20</span></div>
+            <div class="addon-row"><span>Barbeque</span><span>₹20</span></div>
+          </div>
+          <div>
+            <div class="addon-row"><span>Basil Pesto</span><span>₹20</span></div>
+            <div class="addon-row"><span>Mustard Honey</span><span>₹20</span></div>
+            <div class="addon-row"><span>Chilli Garlic</span><span>₹20</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SANDWICHES -->
+    <div class="menu-panel" id="panel-sandwiches">
+      <div class="menu-cat-head">
+        <img src="images/salad-protein-1.jpg" alt="Sandwich plate">
+        <div><h4 class="serif">Sandwiches</h4><span>10 options</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Paneer Avocado</div><div class="mi-desc">435 cal · 16g protein · 27.5g fat · 38g carbs</div></div><div class="mi-price serif">₹260</div></div>
+        <div class="menu-item"><div><div class="mi-name">Panner Sandwich</div><div class="mi-desc">280 cal · 15g protein · 12g fat · 33g carbs</div></div><div class="mi-price serif">₹190</div></div>
+        <div class="menu-item"><div><div class="mi-name">Egg Avocado</div><div class="mi-desc">395 cal · 14g protein · 23.5g fat · 36.5g carbs</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Sandwich</div><div class="mi-desc">240 cal · 21g protein · 4g fat · 31g carbs</div></div><div class="mi-price serif">₹200</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Avocado</div><div class="mi-desc">395 cal · 22g protein · 19.5g fat · 36g carbs</div></div><div class="mi-price serif">₹270</div></div>
+        <div class="menu-item"><div><div class="mi-name">Egg Sandwich</div><div class="mi-desc">235 cal · 13g protein · 8g fat · 31.5g carbs</div></div><div class="mi-price serif">₹160</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Coleslaw</div><div class="mi-desc">244 cal · 22.5g protein · 4g fat · 31g carbs</div></div><div class="mi-price serif">₹210</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Hummus</div><div class="mi-desc">346 cal · 22g protein · 11g fat · 36g carbs</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Peanut Butter</div><div class="mi-desc">300 cal · 10.5g protein · 11g fat · 45g carbs</div></div><div class="mi-price serif">₹160</div></div>
+        <div class="menu-item"><div><div class="mi-name">Choco Peanut Butter</div><div class="mi-desc">385 cal · 11.5g protein · 17g fat · 52g carbs</div></div><div class="mi-price serif">₹170</div></div>
+      </div>
+    </div>
+
+    <!-- PIZZA -->
+    <div class="menu-panel" id="panel-pizza">
+      <span class="base-note">Base made of ragi &amp; multigrain · 10 inch</span>
+      <div class="menu-cat-head">
+        <img src="images/bowl-hummus-rice-1.jpg" alt="Pizza">
+        <div><h4 class="serif">Pizza</h4><span>12 pizzas</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Margherita</div><div class="mi-desc">Pizza sauce blend, cheese blend, cherry tomatoes</div></div><div class="mi-price serif">₹240</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chicken Barbeque</div><div class="mi-desc">Coriander &amp; mint chicken, mushroom, black olives, cheese blend, white cheese dressing, garlic chilli sauce, barbecue sauce</div></div><div class="mi-price serif">₹360</div></div>
+        <div class="menu-item"><div><div class="mi-name">Veg Cheese</div><div class="mi-desc">Sweet corn, capsicum, onion, tomato, black olives, pizza sauce blend, cheese blend</div></div><div class="mi-price serif">₹260</div></div>
+        <div class="menu-item"><div><div class="mi-name">Tandoori Paneer</div><div class="mi-desc">Paneer red spice, sweet corn, capsicum, onion, bell pepper, tandoori spread, cheese blend</div></div><div class="mi-price serif">₹370</div></div>
+        <div class="menu-item"><div><div class="mi-name">Farm House</div><div class="mi-desc">Tomato, capsicum, onion, mushroom, cheese blend, pizza sauce blend</div></div><div class="mi-price serif">₹250</div></div>
+        <div class="menu-item"><div><div class="mi-name">Tandoori Chicken</div><div class="mi-desc">Chicken red spice, sweet corn, capsicum, onion, bell pepper, tandoori spread, cheese blend</div></div><div class="mi-price serif">₹370</div></div>
+        <div class="menu-item"><div><div class="mi-name">House Herb Pesto</div><div class="mi-desc">House herb pesto, cherry tomato, cheese blend, pizza sauce blend, white cheese dressing</div></div><div class="mi-price serif">₹310</div></div>
+        <div class="menu-item"><div><div class="mi-name">Makhni Paneer</div><div class="mi-desc">Paneer red spice, capsicum, onion, makhani style sauce, cheese blend</div></div><div class="mi-price serif">₹400</div></div>
+        <div class="menu-item"><div><div class="mi-name">Fiery Paneer</div><div class="mi-desc">Paneer, cheese blend, pizza sauce blend, peri peri sauce, red paprika, capsicum, corn</div></div><div class="mi-price serif">₹310</div></div>
+        <div class="menu-item"><div><div class="mi-name">Makhni Chicken</div><div class="mi-desc">Chicken red spice, capsicum, onion, makhani style sauce, cheese blend</div></div><div class="mi-price serif">₹400</div></div>
+        <div class="menu-item"><div><div class="mi-name">Masala Paneer</div><div class="mi-desc">Mushroom, onion, paneer, red paprika, capsicum, bell pepper, cheese blend, chipotle sauce</div></div><div class="mi-price serif">₹330</div></div>
+        <div class="menu-item"><div><div class="mi-name">Dieta Garden Pizza (Sweet)</div><div class="mi-desc">Capsicum, pineapple, mushroom, red &amp; yellow bellpeppers, beans, olives, corn</div></div><div class="mi-price serif">₹350</div></div>
+      </div>
+    </div>
+
+    <!-- BURGER -->
+    <div class="menu-panel" id="panel-burger">
+      <div class="menu-cat-head">
+        <img src="images/bowl-rice-egg-2.jpg" alt="Burger">
+        <div><h4 class="serif">Burger</h4><span>5 options · normal or charcoal bun</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Veg Crispy</div><div class="mi-desc">Crispy potato patty, cucumber, lettuce, tomato, onion</div></div><div class="mi-price serif">₹119 / ₹169</div></div>
+        <div class="menu-item"><div><div class="mi-name">Egg Burger</div><div class="mi-desc">Omelet, tomato, onion, lettuce, cheese slice</div></div><div class="mi-price serif">₹119 / ₹169</div></div>
+        <div class="menu-item"><div><div class="mi-name">Desi Crunch</div><div class="mi-desc">Crispy veg patty, cucumber, tomato, onion, lettuce, green chutney</div></div><div class="mi-price serif">₹129 / ₹179</div></div>
+        <div class="menu-item"><div><div class="mi-name">Crispy Chicken</div><div class="mi-desc">Crispy fried chicken, tomato, onion, lettuce, cheese slice, jalapenos</div></div><div class="mi-price serif">₹189 / ₹239</div></div>
+        <div class="menu-item"><div><div class="mi-name">Cheesy Veg</div><div class="mi-desc">Crispy veg patty, cheese slice, cucumber, tomato, onion, lettuce, jalapenos</div></div><div class="mi-price serif">₹149 / ₹199</div></div>
+        <div class="menu-item"><div><div class="mi-name">Add-on: Cheese Slice</div><div class="mi-desc">Added to any burger</div></div><div class="mi-price serif">₹20</div></div>
+      </div>
+      <p class="divider-note" style="text-align:left;margin-top:-6px;">Prices shown as Normal Bun / Charcoal Bun.</p>
+    </div>
+
+    <!-- SHAKES -->
+    <div class="menu-panel" id="panel-shakes">
+      <div class="menu-cat-head">
+        <img src="images/oats-banana-1.jpg" alt="Shake bowl">
+        <div><h4 class="serif">Shakes</h4><span>9 shakes</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Banana Beet Burst</div><div class="mi-desc">255 cal · 6.5g protein · 6.5g fat · 47g carbs</div></div><div class="mi-price serif">₹160</div></div>
+        <div class="menu-item"><div><div class="mi-name">Avocado Shake</div><div class="mi-desc">300 cal · 7g protein · 17g fat · 34g carbs</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Choconut Bliss</div><div class="mi-desc">350 cal · 10g protein · 15g fat · 43g carbs</div></div><div class="mi-price serif">₹160</div></div>
+        <div class="menu-item"><div><div class="mi-name">Dryfruit Shake</div><div class="mi-desc">360 cal · 10g protein · 20g fat · 32g carbs</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Blueberry Shake</div><div class="mi-desc">210 cal · 5g protein · 7g fat · 35g carbs</div></div><div class="mi-price serif">₹240</div></div>
+        <div class="menu-item"><div><div class="mi-name">Dark Chocolate Shake</div><div class="mi-desc">420 cal · 9g protein · 21g fat · 53g carbs</div></div><div class="mi-price serif">₹160</div></div>
+        <div class="menu-item"><div><div class="mi-name">Peanut Butter Shake</div><div class="mi-desc">300 cal · 10g protein · 18g fat · 27g carbs</div></div><div class="mi-price serif">₹130</div></div>
+        <div class="menu-item"><div><div class="mi-name">Coffee Banana Shake</div><div class="mi-desc">260 cal · 7g protein · 9g fat · 37g carbs</div></div><div class="mi-price serif">₹160</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chocobrownie Shake</div><div class="mi-desc">440 cal · 9g protein · 23g fat · 50g carbs</div></div><div class="mi-price serif">₹160</div></div>
+      </div>
+      <div class="addon-block">
+        <h5>Add-on</h5>
+        <div class="addon-row"><span>1 Scoop — 20g protein, no thickeners used</span><span>₹100</span></div>
+      </div>
+    </div>
+
+    <!-- OATS -->
+    <div class="menu-panel" id="panel-oats">
+      <div class="menu-cat-head">
+        <img src="images/oats-nuts-1.jpg" alt="Oats bowl">
+        <div><h4 class="serif">Oats</h4><span>5 bowls</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Blueberry Oats</div><div class="mi-desc">410 cal · 13g protein · 6g fat · 74g carbs</div></div><div class="mi-price serif">₹270</div></div>
+        <div class="menu-item"><div><div class="mi-name">Apple Peanut Butter Oats</div><div class="mi-desc">423 cal · 13g protein · 13g fat · 60g carbs</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Coffee Dark Chocolate</div><div class="mi-desc">485 cal · 14g protein · 14g fat · 78g carbs</div></div><div class="mi-price serif">₹260</div></div>
+        <div class="menu-item"><div><div class="mi-name">Banana Peanut Butter</div><div class="mi-desc">520 cal · 18g protein · 15g fat · 78g carbs</div></div><div class="mi-price serif">₹230</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chocodates Oats</div><div class="mi-desc">510 cal · 13g protein · 6g fat · 90g carbs</div></div><div class="mi-price serif">₹220</div></div>
+      </div>
+    </div>
+
+    <!-- DESSERTS -->
+    <div class="menu-panel" id="panel-desserts">
+      <div class="menu-cat-head">
+        <img src="images/oats-apple-1.jpg" alt="Dessert bowl">
+        <div><h4 class="serif">Desserts</h4><span>4 brownies</span></div>
+      </div>
+      <div class="menu-list">
+        <div class="menu-item"><div><div class="mi-name">Walnut Brownie</div></div><div class="mi-price serif">₹120</div></div>
+        <div class="menu-item"><div><div class="mi-name">Peanutbutter Brownie</div></div><div class="mi-price serif">₹140</div></div>
+        <div class="menu-item"><div><div class="mi-name">Darkchocolate Brownie</div></div><div class="mi-price serif">₹140</div></div>
+        <div class="menu-item"><div><div class="mi-name">Chocopeanut Butter Brownie</div></div><div class="mi-price serif">₹160</div></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="alt-bg" id="gallery">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Food Gallery</span>
+      <h2 class="serif">Every bowl, shot the same honest way.</h2>
+    </div>
+    <div class="gallery-grid reveal">
+      <figure class="wide tall"><img src="images/hero-main.jpg" alt="Hummus paneer rice bowl"><figcaption>Hummus Paneer Rice</figcaption></figure>
+      <figure><img src="images/bowl-rice-egg-1.jpg" alt="Rice bowl with egg and pickle"><figcaption>Rice bowl</figcaption></figure>
+      <figure><img src="images/bowl-makhni-1.jpg" alt="Makhni chicken rice"><figcaption>Makhni Chicken Rice</figcaption></figure>
+      <figure class="tall"><img src="images/salad-protein-2.jpg" alt="High protein salad"><figcaption>High Protein Salad</figcaption></figure>
+      <figure><img src="images/salad-crouton-1.jpg" alt="Garden salad with dip"><figcaption>Garden salad</figcaption></figure>
+      <figure><img src="images/oats-banana-1.jpg" alt="Banana peanut butter oats"><figcaption>Banana Peanut Butter Oats</figcaption></figure>
+      <figure class="wide"><img src="images/salad-colorful-1.jpg" alt="Burrito bowl salad"><figcaption>Burrito Bowl</figcaption></figure>
+      <figure><img src="images/bowl-hummus-rice-2.jpg" alt="Hummus rice bowl"><figcaption>Hummus rice bowl</figcaption></figure>
+      <figure><img src="images/oats-apple-1.jpg" alt="Apple peanut butter oats"><figcaption>Apple Peanut Butter Oats</figcaption></figure>
+      <figure><img src="images/oats-nuts-1.jpg" alt="Dryfruit oats bowl"><figcaption>Dryfruit Oats</figcaption></figure>
+      <figure><img src="images/bowl-rice-egg-2.jpg" alt="Rice bowl overhead"><figcaption>Rice bowl</figcaption></figure>
+      <figure><img src="images/bowl-makhni-2.jpg" alt="Makhni rice bowl"><figcaption>Makhni rice</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-layout">
+      <div class="about-photo reveal">
+        <img src="images/salad-protein-1.jpg" alt="Fresh salad bowl from Dieta Café">
+      </div>
+      <div class="about-copy reveal">
+        <span class="eyebrow">About Dieta Café</span>
+        <h2 class="serif" style="font-size:clamp(28px,3.4vw,42px);font-weight:500;margin:18px 0 22px;">Your goals, our nutrition.</h2>
+        <p>Dieta Café is a healthy-food cloud kitchen built around a simple idea: nutrition that feels right, not restrictive. Every dish is served with its full nutrition breakdown, from rice bowls to shakes, so what you eat is always a clear choice rather than a guess.</p>
+        <p>The kitchen is based in Ankleshwar, working off a rotating menu of rice bowls, salads, sandwiches, pizza, burgers, shakes, oats and desserts — available à la carte or through a weekly and monthly subscription.</p>
+        <div class="pillars">
+          <div class="pillar"><span class="dot"></span><span>Fresh Ingredients</span></div>
+          <div class="pillar"><span class="dot"></span><span>Nutrition That Feels Right</span></div>
+          <div class="pillar"><span class="dot"></span><span>Fuel Your Best</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DELIVERY (dark strip) ============ -->
+<section class="dark-bg" id="delivery">
+  <div class="wrap">
+    <span class="eyebrow">Delivery</span>
+    <h2 class="serif" style="font-size:clamp(28px,3.6vw,44px);font-weight:500;margin:18px 0 0;max-width:640px;">Delivery is built into every plan.</h2>
+    <div class="delivery-strip">
+      <div>
+        <p>Both Package 1 and Package 2 include delivery in their pricing — there's no separate delivery fee to work out. Dieta Café operates out of Ankleshwar, delivering meals for the duration of your plan.</p>
+      </div>
+      <div class="delivery-fact">
+        <strong class="serif">₹239 / ₹223</strong>
+        <span>Per-day cost, delivery included (Package 1 / Package 2)</span>
+      </div>
+      <div class="delivery-fact">
+        <strong class="serif">A-12, Signature Galleria</strong>
+        <span>Near Uma Bhavan, Mahavir Turning, Ankleshwar</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta" id="subscribe">
+  <div class="wrap">
+    <span class="eyebrow">Ready when you are</span>
+    <h2 class="serif">Your next meal could already<br>be <em>taken care of.</em></h2>
+    <div class="hero-cta">
+      <a href="#plans" class="btn btn-primary">Explore Meal Plans</a>
+      <a href="#menu" class="btn btn-ghost">View Menu</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT / FOOTER ============ -->
+<footer id="contact">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <img src="images/dieta-logo.png" alt="Dieta Café" class="footer-logo">
+        <p class="footer-tag serif">"Eat clean. Stay lean. Live better."</p>
+      </div>
+      <div>
+        <h5>Navigate</h5>
+        <ul class="flinks">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#plans">Meal Plans</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#about">About</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Menu</h5>
+        <ul class="flinks">
+          <li><a href="#menu">Rice &amp; Salads</a></li>
+          <li><a href="#menu">Sandwiches &amp; Pizza</a></li>
+          <li><a href="#menu">Shakes &amp; Oats</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contact</h5>
+        <ul class="footer-contact">
+          <li>+91 70415 00122</li>
+          <li>A-12, Signature Galleria, next to Perfect Laboratory, near Uma Bhavan, Mahavir Turning, Ankleshwar</li>
+          <li>Instagram — @dieta.nutrition</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Dieta Café. Demo website — for client preview only.</span>
+      <span>Nutrition that feels right.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Header scroll state
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 40);
+  }, {passive:true});
+
+  // Mobile menu
+  const burger = document.getElementById('burgerBtn');
+  const panel = document.getElementById('mobilePanel');
+  burger.addEventListener('click', () => {
+    burger.classList.toggle('open');
+    panel.classList.toggle('open');
+  });
+  panel.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    burger.classList.remove('open');
+    panel.classList.remove('open');
+  }));
+
+  // Menu tabs
+  const tabs = document.querySelectorAll('.menu-tab');
+  const panels = document.querySelectorAll('.menu-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.12});
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
